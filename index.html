@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper.js CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>Document</title>
     <style>
         *{
@@ -25,10 +28,102 @@ header {
     width: 100%;
     margin-bottom: 2%;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
 
     </style>
 </head>
-<body>
+<body class="bg-gray-100">
+    <!-- Container for the slider -->
+    <div class="max-w-4xl mx-auto py-12">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x300/3498db/fff?text=Slide+1" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x300/e74c3c/fff?text=Slide+2" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x300/2ecc71/fff?text=Slide+3" class="w-full h-full object-cover rounded-lg">
+                </div>
+            </div>
+
+            <!-- Pagination and Navigation Buttons -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
     <header>
         <div class="logo">
             <img src="/images/logo.png" alt="Your Logo">
@@ -38,11 +133,52 @@ header {
     <div>
         <img class="banner-1" src="/images/banner-1.jpg">
     </div>
+
+
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+ 
     <p>Using the fascinating medium of pencil, contemporary artists have produced stunning black and white as well as extremely detailed pencil sketches which have dominated the conversation during the art fairs and auctions held at almost every prominent pencil sketch art gallery. Undoubtedly, it’s the intimacy and immediacy of this medium that has allured artists to pull out some expert techniques to create incredible pencil drawings that have blurred the lines between reality and art.</p>
     <p>To help you find the perfect pencil art for your home from the kaleidoscopic world of art, we have compiled the top ten in-demand artists who have created realistic pencil drawings and outpacing demand for other artworks at several prominent pencil sketch galleries.</p>
     <p>Pencil drawings of Cath Riley are undoubtedly amazing to look at, but what is more interesting is the way she describes her hyper-realistic pencil creations based around the human figure. Deeming them as mere representations of a particular stage of her artistic abilities and understanding, she regards her current works as a part of her ongoing evolutionary process of exploration and development.</p>
     <p>Of late, she has moved to do more experimental very large-scale drawings some of which are abstract in character and serve different emphasis, unlike her previous pencil portrait and 'flesh' figure drawings.</p>
     <p>To date, many of her incredible pencil drawings are included in collections of every eminent pencil sketch gallery in the world, some commissioned, and some used in magazine features and advertising for companies like Nike, GQ, M&C Saatchi, The Economist, and The New York Times.</p>
 
+
 </body>
+
+
+ <!-- Swiper.js Script -->
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+ <script>
+     var swiper = new Swiper('.swiper-container', {
+         loop: true,
+         autoplay: {
+             delay: 3000,
+             disableOnInteraction: false,
+         },
+         pagination: {
+             el: '.swiper-pagination',
+             clickable: true,
+         },
+         navigation: {
+             nextEl: '.swiper-button-next',
+             prevEl: '.swiper-button-prev',
+         },
+     });
+ </script>
+ 
 </html>
