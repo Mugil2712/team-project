@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper.js CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>Document</title>
     <style>
         *{
@@ -25,9 +28,101 @@ header {
     width: 100%;
     margin-bottom: 2%;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
 
     </style>
 </head>
+<body class="bg-gray-100"></body>
+    <!-- Container for the slider -->
+    <div class="max-w-4xl mx-auto py-12">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x300/3498db/fff?text=Slide+1" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x300/e74c3c/fff?text=Slide+2" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/600x300/2ecc71/fff?text=Slide+3" class="w-full h-full object-cover rounded-lg">
+                </div>
+            </div>
+
+            <!-- Pagination and Navigation Buttons -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
 <body>
     <header>
         <div class="logo">
@@ -38,5 +133,42 @@ header {
     <div>
         <img class="banner-1" src="/images/banner-1.jpg">
     </div>
+
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
+
+
+ <!-- Swiper.js Script -->
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+ <script>
+     var swiper = new Swiper('.swiper-container', {
+         loop: true,
+         autoplay: {
+             delay: 3000,
+             disableOnInteraction: false,
+         },
+         pagination: {
+             el: '.swiper-pagination',
+             clickable: true,
+         },
+         navigation: {
+             nextEl: '.swiper-button-next',
+             prevEl: '.swiper-button-prev',
+         },
+     });
+ </script>
+ 
 </html>
